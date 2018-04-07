@@ -1,42 +1,52 @@
 public class Etudiants {
-	
-public  static int id;
-public  static String nom;
-public  static String prenom;
-public  static String age;
-public  static String sexe;
+
+	public  int id;
+	public  String nom;
+	public  String prenom;
+	public  String age;
+	public  String sexe;
+
+	public Etudiants(){
+
+		id=0;
+		nom="";
+		prenom="";
+		age="";
+		sexe="";
+
+	}
 
 
-public static int getId() {
-	return id;
-}
-public static void setId(int id) {
-	Etudiants.id = id;
-}
-public static String getNom() {
-	return nom;
-}
-public static void setNom(String nom) {
-	Etudiants.nom = nom;
-}
-public static String getPrenom() {
-	return prenom;
-}
-public static void setPrenom(String prenom) {
-	Etudiants.prenom = prenom;
-}
-public static String getAge() {
-	return age;
-}
-public static void setAge(String age) {
-	Etudiants.age = age;
-}
-public static String getSexe() {
-	return sexe;
-}
-public static void setSexe(String sexe) {
-	Etudiants.sexe = sexe;
-}
+	public  int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public  String getNom() {
+		return nom;
+	}
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+	public  String getPrenom() {
+		return prenom;
+	}
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
+	}
+	public  String getAge() {
+		return age;
+	}
+	public  void setAge(String age) {
+		this.age = age;
+	}
+	public  String getSexe() {
+		return sexe;
+	}
+	public  void setSexe(String sexe) {
+		this.sexe = sexe;
+	}
 
 
 

@@ -105,7 +105,7 @@ public class Getudiants {
             	
             	
             case ("4"):
-            	// afficher tous
+            	// afficher un
             	
            	System.out.println("################");
         	System.out.println("#Afficher un#");
@@ -119,8 +119,8 @@ public class Getudiants {
         	
             
             	
-            	//System.out.println(i+"#"+malistetud.get(i).getNom());
-            	System.out.println(e+"#"+malistetud.get(e));
+            	System.out.println(e+"#"+malistetud.get(e).getNom());
+            	//System.out.println(e+"#"+malistetud.get(e));
             	
             
             //System.out.println("------------------------");
