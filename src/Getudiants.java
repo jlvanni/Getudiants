@@ -56,6 +56,14 @@ public class Getudiants {
     			System.out.println("Le Nom:");
     			ettd.setNom(scan.next());
     			
+    			System.out.println("Les Notes:");
+    			
+    			ArrayList<String> listNote = new ArrayList<>();
+    			listNote.addAll(Arrays.asList(scan.next().split(",")));
+    			ettd.setNotes(listNote);
+    			//ettd.setNotes(scan.next());
+    			
+    			
     			malistetud.add(ettd);
     			indxe++;
             	break;
@@ -139,8 +147,9 @@ public class Getudiants {
         	System.out.println("------------------------");
             
         	for(i=0;i<malistetud.size();i++) {
-            	//System.out.println(i+"#"+malistetud.get(i).getNom());
-            	System.out.println(i+"#"+malistetud.get(i));
+            	System.out.println(i+"#"+malistetud.get(i).getNom());
+            	System.out.println(i+"#"+malistetud.get(i).getNotes());
+            	//System.out.println(i+"#"+malistetud.get(i));
         	}
             
             //System.out.println("------------------------");

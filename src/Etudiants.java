@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Etudiants {
 
 	public  int id;
@@ -5,6 +7,8 @@ public class Etudiants {
 	public  String prenom;
 	public  String age;
 	public  String sexe;
+	//public String[] notes;
+	public ArrayList<String> notes;
 
 	public Etudiants(){
 
@@ -13,8 +17,31 @@ public class Etudiants {
 		prenom="";
 		age="";
 		sexe="";
-
+		//ArrayList<Etudiants> notes;
+		//ArrayList<E> myArray = new ArrayList<E>();
+		//notes="";
+		ArrayList<String> notes = new ArrayList<String>();
+	
 	}
+
+
+
+
+
+	public ArrayList<String> getNotes() {
+		return notes;
+	}
+
+
+
+
+
+	public void setNotes(ArrayList<String> listNote) {
+		this.notes = listNote;
+	}
+
+
+
 
 
 	public  int getId() {
