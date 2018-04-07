@@ -67,9 +67,6 @@ public void Travailler(){
 
 
 public void Afficher(){
-
-	
-
 	int e;
 
 	int f;
