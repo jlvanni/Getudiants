@@ -1,4 +1,5 @@
 import java.util.*;
+import java.io.*;
 
 
 //private static Scanner scan;
@@ -35,6 +36,8 @@ public class Getudiants {
 		System.out.println("3/Modifier un etudiant ");
 		System.out.println("4/Afficher un etudiant ");
 		System.out.println("5/Afficher tous les etudiants ");
+		System.out.println("6/Enregistrer tous les etudiants ");
+		System.out.println("7/Charger tous les etudiants ");
 		System.out.println("8/Quit ");
 		System.out.println("--------------------------------");
 		Scanner scanmenu = new Scanner(System.in);
@@ -127,8 +130,8 @@ public class Getudiants {
         	
             
             	
-            	System.out.println(e+"#"+malistetud.get(e).getNom());
-            	//System.out.println(e+"#"+malistetud.get(e));
+            	//System.out.println(e+"#"+malistetud.get(e-1).getNom());
+            	System.out.println(e+"#"+malistetud.get(e-1));
             	
             
             //System.out.println("------------------------");
@@ -154,6 +157,74 @@ public class Getudiants {
             
             //System.out.println("------------------------");
             	break;
+            	
+            	
+            case ("6"):
+            	// Enreistrer dans un fichier tous
+            	//int i;
+           	System.out.println("################");
+        	System.out.println("#Enregistrer tous#");
+        	System.out.println("################");
+            	//malistaffich();
+            	//System.out.println(malistetud);
+        	System.out.println(malistetud.size()+" Etudiants");
+        	System.out.println("------------------------");
+        	try
+        	{
+        	ObjectOutputStream sortieout = new ObjectOutputStream(new FileOutputStream(System.getProperty("user.dir") + "/recup.txt"));
+        	//on enregistre l'objet dans le fichier => dans ce cas ta collection
+        	//sortieout.writeObject(malistetud);
+        	//System.out.println(malistetud);
+        	for(i=0;i<malistetud.size();i++) {
+            	//System.out.println(i+"#"+malistetud.get(i).getNom());
+            	//System.out.println(i+"#"+malistetud.get(i).getNotes());
+            	System.out.println(i+"#"+malistetud.get(i));
+        		sortieout.writeObject(malistetud.get(i));
+        	}
+            
+        	}
+        	catch(Exception eee){
+        	System.out.println(eee.getMessage()+" probleme sur le fichier :(");
+        	} 
+        	           
+            //System.out.println("------------------------");
+            	break;
+            	
+            case("7"):
+            	//Charger un fichier tous
+            	//int i;
+           	System.out.println("################");
+        	System.out.println("#Charger tous#");
+        	System.out.println("################");
+            	//malistaffich();
+            	//System.out.println(malistetud);
+        	//System.out.println(malistetud.size()+" Etudiants");
+        	//malistetud=null;
+        	malistetud.removeAll(malistetud);
+        	System.out.println("------------------------");
+
+            	try { //on ouvre le fichier
+            		ObjectInputStream entree = new ObjectInputStream(new FileInputStream(System.getProperty("user.dir") + "/recup.txt"));
+            		//Collection malistetud2 = (Collection)entree.readObject();
+            		//malistetud(entree.readObject());	
+            		
+            		while(true)
+            		{
+            			//ettd o=entree.readObject();
+            			malistetud.add((Etudiants) entree.readObject());
+            			
+            		}
+            		
+            	}
+            	catch(Exception ee){
+                	System.out.println(ee.getMessage()+" probleme sur le fichier :(");
+                	}
+            	finally {
+         
+            	System.out.println(malistetud.size()+" Etudiants");
+            	System.out.println(malistetud.get(0).getNom());
+            	break;
+            	}
             case ("8"):
             	sortie=0;
             	break;

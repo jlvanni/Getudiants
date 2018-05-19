@@ -1,6 +1,7 @@
 import java.util.*;
+import java.io.*;
 
-public class Etudiants {
+public class Etudiants implements Serializable {
 
 	public  int id;
 	public  String nom;
